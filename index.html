@@ -145,7 +145,7 @@
         
         .crossword {
             display: grid;
-            grid-template-columns: repeat(11, 1fr);
+            grid-template-columns: repeat(8, 1fr);
             gap: 2px;
             margin: 20px 0;
             background-color: #333;
@@ -154,8 +154,8 @@
         }
         
         .cell {
-            width: 35px;
-            height: 35px;
+            width: 40px;
+            height: 40px;
             background-color: white;
             display: flex;
             align-items: center;
@@ -173,7 +173,7 @@
             height: 100%;
             border: none;
             text-align: center;
-            font-size: 16px;
+            font-size: 18px;
             text-transform: uppercase;
             background: transparent;
             outline: none;
@@ -368,8 +368,8 @@
             }
             
             .cell {
-                width: 28px;
-                height: 28px;
+                width: 35px;
+                height: 35px;
             }
             
             .level-btn {
@@ -378,7 +378,7 @@
             }
             
             .crossword {
-                grid-template-columns: repeat(11, 1fr);
+                grid-template-columns: repeat(8, 1fr);
             }
             
             .header {
@@ -441,28 +441,12 @@
                         <div class="questions horizontal">
                             <h2>📏 По горизонтали:</h2>
                             <div class="question horizontal">
-                                <span class="question-number">2</span>
-                                Все живое, что нас окружает
+                                <span class="question-number">1</span>
+                                Наука о взаимодействии живых организмов с окружающей средой
                             </div>
                             <div class="question horizontal">
                                 <span class="question-number">3</span>
-                                Защита природы от вредного воздействия
-                            </div>
-                            <div class="question horizontal">
-                                <span class="question-number">5</span>
-                                Охраняемая природная территория
-                            </div>
-                            <div class="question horizontal">
-                                <span class="question-number">6</span>
-                                Наука о взаимоотношениях организмов с окружающей средой
-                            </div>
-                            <div class="question horizontal">
-                                <span class="question-number">7</span>
-                                Ухудшение состояния окружающей среды
-                            </div>
-                            <div class="question horizontal">
-                                <span class="question-number">9</span>
-                                Забота о природе
+                                Смесь газов, необходимых для дыхания живых организмов
                             </div>
                         </div>
                         
@@ -470,23 +454,15 @@
                             <h2>📐 По вертикали:</h2>
                             <div class="question vertical">
                                 <span class="question-number">1</span>
-                                Многолетнее растение с твердым стволом
+                                Прозрачная жидкость, основа жизни на Земле
+                            </div>
+                            <div class="question vertical">
+                                <span class="question-number">2</span>
+                                Мусор и ненужные материалы, образующиеся в результате деятельности человека
                             </div>
                             <div class="question vertical">
                                 <span class="question-number">4</span>
-                                Окружающий мир, природа
-                            </div>
-                            <div class="question vertical">
-                                <span class="question-number">8</span>
-                                Система живых организмов
-                            </div>
-                            <div class="question vertical">
-                                <span class="question-number">10</span>
-                                Отходы, мусор
-                            </div>
-                            <div class="question vertical">
-                                <span class="question-number">11</span>
-                                Газ, необходимый для дыхания
+                                Токсичное вещество, опасное для окружающей среды
                             </div>
                         </div>
                     </div>
@@ -514,89 +490,47 @@
     <script src="https://telegram.org/js/games.js"></script>
     
     <script>
-        // Структура кроссворда по образцу
+        // Структура кроссворда с новыми словами
         const crosswordData = {
-            size: 11,
+            size: 8,
             words: [
                 // По вертикали
                 {
                     id: 1,
-                    word: "ДЕРЕВО",
+                    word: "ВОДА",
                     direction: "vertical",
-                    start: { x: 0, y: 0 },
-                    clue: "Многолетнее растение с твердым стволом"
+                    start: { x: 2, y: 0 },
+                    clue: "Прозрачная жидкость, основа жизни на Земле"
+                },
+                {
+                    id: 2,
+                    word: "ОТХОДЫ",
+                    direction: "vertical",
+                    start: { x: 4, y: 1 },
+                    clue: "Мусор и ненужные материалы, образующиеся в результате деятельности человека"
                 },
                 {
                     id: 4,
-                    word: "СРЕДА",
+                    word: "ЯД",
                     direction: "vertical",
-                    start: { x: 4, y: 0 },
-                    clue: "Окружающий мир, природа"
-                },
-                {
-                    id: 8,
-                    word: "БИОСФЕРА",
-                    direction: "vertical",
-                    start: { x: 8, y: 0 },
-                    clue: "Система живых организмов"
-                },
-                {
-                    id: 10,
-                    word: "ОТХОДЫ",
-                    direction: "vertical",
-                    start: { x: 2, y: 5 },
-                    clue: "Отходы, мусор"
-                },
-                {
-                    id: 11,
-                    word: "ВОЗДУХ",
-                    direction: "vertical",
-                    start: { x: 10, y: 0 },
-                    clue: "Газ, необходимый для дыхания"
+                    start: { x: 7, y: 1 },
+                    clue: "Токсичное вещество, опасное для окружающей среды"
                 },
                 
                 // По горизонтали
                 {
-                    id: 2,
-                    word: "ПРИРОДА",
+                    id: 1,
+                    word: "ЭКОЛОГИЯ",
                     direction: "horizontal",
-                    start: { x: 0, y: 2 },
-                    clue: "Все живое, что нас окружает"
+                    start: { x: 0, y: 1 },
+                    clue: "Наука о взаимодействии живых организмов с окружающей средой"
                 },
                 {
                     id: 3,
-                    word: "ОХРАНА",
+                    word: "ВОЗДУХ",
                     direction: "horizontal",
-                    start: { x: 0, y: 4 },
-                    clue: "Защита природы от вредного воздействия"
-                },
-                {
-                    id: 5,
-                    word: "ЗАПОВЕДНИК",
-                    direction: "horizontal",
-                    start: { x: 0, y: 6 },
-                    clue: "Охраняемая природная территория"
-                },
-                {
-                    id: 6,
-                    word: "ЭКОЛОГИЯ",
-                    direction: "horizontal",
-                    start: { x: 0, y: 8 },
-                    clue: "Наука о взаимоотношениях организмов с окружающей средой"
-                },
-                {
-                    id: 7,
-                    word: "ЗАГРЯЗНЕНИЕ",
-                    direction: "horizontal",
-                    start: { x: 0, y: 10 },
-                    clue: "Ухудшение состояния окружающей среды"
-                },
-                {
-                    id: 9,
-                    word: "ЗАБОТА",
-                    direction: "horizontal",
-                    start: { x: 5, y: 3 },
-                    clue: "Забота о природе"
+                    start: { x: 1, y: 5 },
+                    clue: "Смесь газов, необходимых для дыхания живых организмов"
                 }
             ]
         };
